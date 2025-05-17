@@ -15,6 +15,7 @@
 </head>
 <body>
     <h1>Class Work Home</h1>
+    <p>Check by console</p>
     <a href="infocard.html"><button>Info card</button></a>
     <hr>
      
@@ -22,8 +23,11 @@
     <script>
       //1Array men se name nikalna 
       let arr = ['Arif','wasif','Rahim','Shahid','Haseeb','Nasir'];
-    //   document.write(arr); 
-    console.log(arr);
+    
+     for(let i = 0; i<arr.length; i++){
+      console.log(`By for loop ==> ${arr[i]}`); 
+    } 
+    console.log(`By log ==> ${arr}`);
       console.log(arr[0]);
       console.log(arr[1]);
       console.log(arr[2]);
