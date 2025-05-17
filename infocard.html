@@ -10,7 +10,7 @@
     form {
       margin-bottom: 20px;
       
-      width: 500px;
+      width:  50%px;
     }
     input {
       display: block;
@@ -31,13 +31,15 @@
       padding: 20px;
       width: 300px;
       border-radius: 10px solid grey;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.9);
       font-family: Arial, sans-serif;
+      margin-left: 40%;
     }
+   
   </style>
 </head>
 <body>
-
+ 
   <h2>Enter Your Details</h2>
   <form onsubmit="showCard(event)">
     <input type="text" id="userName" placeholder="Enter your name" required>
@@ -51,7 +53,7 @@
     <p id="age"></p>
     <p id="hobby"></p>
   </div>
-
+  <a href="index.html"><button>Back to home</button></a>
   <script>
     function showCard(event) {
       event.preventDefault(); // form page reload na kare
