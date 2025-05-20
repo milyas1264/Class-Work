@@ -1,39 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Color Generator</title>
-    <style>
-        body{
-       background-color: lightblue;
-       text-align: center;
-     }
-     hr{border: 5px solid brown;}
-     button{
-       padding: 10px 20px;
-       font-size: 16px;
-       background-color: rgb(183, 235, 86);
-       border-radius: 10px;
-       color: black;
-       cursor: pointer;
-     }
-    </style>
-</head>
-<body>
-    <h1>Random Color Generator</h1>
-    <a href="index.html"><button>Home page</button></a>
-    <a href="infocard.html"><button>Info card</button></a>
-    <a href="pass.html"><button>Password</button></a>
-    <hr>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <title>Random RGB Color Generator</title>
   <style>
     body {
+      background-color: cadetblue;
       text-align: center;
       font-family: Arial;
       transition: background-color 0.5s ease;
@@ -48,12 +20,20 @@
       padding: 10px 20px;
       font-size: 18px;
       cursor: pointer;
+      border-radius: 10px;
+      background-color: aqua;
     }
+    
   </style>
 </head>
 <body>
+  <h1>Random Color Generator</h1>
+    <a href="index.html"><button>Home page</button></a>
+    <a href="infocard.html"><button>Info card</button></a>
+    <a href="pass.html"><button>Password</button></a>
+    <hr>
 
-  <h1> Random RGB Color Generator</h1>
+  <h2> Random RGB Color Generator</h2>
   <button onclick="generateColor()">Generate Random Color</button>
   <div id="colorBox">rgb(255, 255, 255)</div>
 
@@ -73,9 +53,6 @@
       document.getElementById("colorBox").innerText = rgb;
     }
   </script>
-
-</body>
-</html>
 
 </body>
 </html>
