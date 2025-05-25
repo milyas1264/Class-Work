@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Greeting</title>
+    <style>
+        body{
+       background-color: lightblue;
+       text-align: center;
+     }
+     hr{border: 5px solid brown;}
+    </style>
+</head>
+<body>
+    <h1>Greetings Time</h1>
+    <a href="index.html"><button>Back to home</button></a>
+    
+    <hr>
+    <h2 id="message">message</h2>
+    
+
+    <script>
+        // Greetings Based on Time
+// Task: Agar time morning hai toh “Good Morning” show karo, afternoon mein “Good Afternoon” etc.
+// Time Ranges:
+// 5 AM - 12 PM: Good Morning
+// 12 PM - 5 PM: Good Afternoon
+// 5 PM - 9 PM: Good Evening
+// 9 PM - 5 AM: Good Night
+        // let now = new Date();
+        // let hours = now.getHours();
+        // let greeting;
+        // if (hours >= 5 && hours < 12) {
+        //     greeting = "Good Morning";
+        // } else if (hours >= 12 && hours < 17) {
+        //     greeting = "Good Afternoon";
+        // } else if (hours >= 17 && hours < 21) {
+        //     greeting = "Good Evening";
+        // } else {
+        //     greeting = "Good Night";
+        // }
+        // document.write(`T=4) ${greeting} <br>`);
+
+        let hour = +prompt("Enter current hour (0 to 23):");
+       
+        let message = "";
+
+        if (hour >= 0 && hour <= 23) {
+          if (hour >= 5 && hour < 12) {
+            message = "Good Morning";
+          } else if (hour >= 12 && hour < 17) {
+            message = "Good Afternoon";
+          } else if (hour >= 17 && hour < 21) {
+            message = "Good Evening";
+          } else {
+            message = "Good Night";
+          }
+        } else {
+          message = "Invalid hour!";
+        }
+
+        document.getElementById("message").textContent = message;
+
+//         Age Calculator
+// Task: User se date of birth lo aur uska age calculate karke show karo.
+        let birthDate = new Date(prompt("Enter your birth date (YYYY-MM-DD)"));
+        let today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        let monthDiff = today.getMonth() - birthDate.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+        }
+        document.write(`T=5) Your age is: ${age} <br>`);
+    
+    </script>
+</body>
+</html>

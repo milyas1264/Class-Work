@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date method</title>
+    <style>
+        body{
+       background-color: lightblue;
+       text-align: center;
+     }
+     hr{border: 5px solid brown;}
+    </style>
+</head>
+<body>
+    <h1>Date Methods</h1>
+    <a href="index.html"><button>Back to Home</button></a>
+    <hr>
+
+    <script>
+//         Current Date & Time Display
+// Task: Current date and time ko browser mein display karo.
+   let date = new Date();
+   document.write(`T=1) Today date is : ${date} <br>`);
+   
+//    Only Date Extract Karo
+// Task: Sirf date (day/month/year) print karo.
+// Output example: 23/05/2025
+let today = new Date();
+
+let day = today.getDate().toString().padStart(2, '0');        // padStart(2, '0')	1 digit values ko 2 digit banata hai (e.g., 5 → 05)
+let month = (today.getMonth() + 1).toString().padStart(2, '0'); // Month (0-se shru hota ha islye +1 kia hai)
+let year = today.getFullYear();                                // Year
+
+let formattedDate = `${day}/${month}/${year}`;
+
+document.write(`T=2)full date :${formattedDate} <br>`); // Output: 23/05/2025 (for example)
+
+// Only Time Extract Karo
+// Task: Sirf current time show karo in format: HH:MM:SS
+let now = new Date();
+
+let hours = now.getHours().toString().padStart(2, '0');
+let minutes = now.getMinutes().toString().padStart(2, '0');
+let seconds = now.getSeconds().toString().padStart(2, '0');
+
+let formattedTime = `${hours}:${minutes}:${seconds}`;
+
+document.write(`T=3) Time = ${formattedTime} <br>`);  // Output: e.g., 14:35:07
+
+
+    </script>
+    <hr>
+</body>
+</html>
