@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+    <style>
+        body{
+       background-color: lightblue;
+       text-align: center;
+     }
+     hr{border: 5px solid brown;}
+    </style>
+</head>
+<body>
+    <h1>Countdown Timer for futureDate and date formatter</h1>
+    <a href="../index.html"><button>Back to home</button></a>
+    
+    <hr>
+
+    <!-- Heading jahan countdown show hoga -->
+    <h2 id="countdown"></h2>
+    <hr>
+    <h2 id="formattedDate"></h2>
+    <script>
+        // Countdown Timer
+// Task: Kisi specific future date (jaise New Year) tak kitna time baqi hai wo countdown show karo.
+// Output example: 100 days 5 hours 30 minutes 10 seconds left
+
+
+//  Target future date set karna (New Year)
+      let target = new Date("January 1, 2026 00:00:00");
+
+      //  Function jo countdown calculate karta hai
+      function timer() {
+
+        //  Abhi ka current time lena
+        let now = new Date();
+
+        //  Target aur current time ka difference nikalna (milliseconds mein)
+        let diff = target - now;
+
+        //  Agar time khatam ho gaya ho
+        if (diff <= 0) {
+          document.getElementById("countdown").textContent = "Time's up!";
+          return; // function yahan ruk jaye
+        }
+
+        //  Din nikalna (milliseconds se din)
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        //  Ghante nikalna
+        let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+        //  Minutes nikalna
+        let minutes = Math.floor((diff / (1000 * 60)) % 60);
+
+        //  Seconds nikalna
+        let seconds = Math.floor((diff / 1000) % 60);
+
+        //  Countdown ko HTML mein show karna
+        document.getElementById("countdown").textContent =
+          days + " days " + hours + " hours " +
+          minutes + " minutes " + seconds + " seconds left";
+      }
+
+      //  Har second mein function dobara chale
+      setInterval(timer, 1000);
+
+
+//    Task= 7) Date Formatter Function
+// Task: Ek function banao jo koi bhi date le aur usko format kare: Monday, 23 May 2025
+
+//  Function jo date ko format karta hai
+      function formatDate(inputDate) {
+        // Days aur months ke naam arrays mein store kiye
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let months = ["January", "February", "March", "April", "May", "June", 
+                      "July", "August", "September", "October", "November", "December"];
+
+        //  Day, Date, Month, Year nikal rahe hain
+        let dayName = days[inputDate.getDay()];
+        let date = inputDate.getDate();
+        let monthName = months[inputDate.getMonth()];
+        let year = inputDate.getFullYear();
+
+        //  Final format create kar rahe hain
+        return `Formatted Date: ${dayName}, ${date} ${monthName} ${year}`;
+      }
+
+      //  Function call karke result display kar rahe hain
+      let today = new Date(); // Aaj ki tareekh
+      document.getElementById("formattedDate").textContent = formatDate(today);
+
+
+    </script>
+</body>
+</html>

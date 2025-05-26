@@ -3,10 +3,8 @@
 <head>
   <title>My Self Form</title>
   <style>
-    body{
-      background-color: bisque;
-      text-align: center;
-    }
+    
+    
     form {
       margin-bottom: 20px;
       
@@ -38,11 +36,16 @@
      h2,p{
       color: rgb(40, 6, 230);
     }
-   
+    body{
+       background-color: lightblue;
+       text-align: center;
+     }
+     hr{border: 5px solid brown;}
   </style>
 </head>
 <body>
- 
+ <h1>Info card </h1>
+    <a href="../index.html"><button>Back to home</button></a>
   <h2>Enter Your Details</h2>
   <form onsubmit="showCard(event)">
     <input type="text" id="userName" placeholder="Enter your name" required>
@@ -56,7 +59,6 @@
     <p id="age"></p>
     <p id="hobby"></p>
   </div>
-  <a href="index.html"><button>Back to home</button></a>
   <script>
     function showCard(event) {
       event.preventDefault(); // form page reload na kare
