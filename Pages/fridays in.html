@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+       background-color: lightblue;
+       text-align: center;
+     }
+     hr{border: 5px solid brown;}
+    </style>
+</head>
+<body>
+        <h1>Fridays in a month and year</h1>
+    <a href="../index.html"><button>Back to home</button></a>
+
+    <hr>
+
+    <script>
+//         How Many Fridays in a Month
+// Task: Kisi bhi month aur year ke liye check karo us month mein kitne Fridays hain.
+
+         //  User se month aur year input lena
+      let month = +prompt("Enter month (1-12):");  // Example: 5 for May
+      let year = +prompt("Enter year (e.g., 2025):");
+
+      //  Friday count start mein 0
+      let fridayCount = 0;
+
+      //  Month ke last din tak loop chalana
+      let daysInMonth = new Date(year, month, 0).getDate(); // month - 1 nahi, kyunke month=5, 0 lagane se 4th month ka end aayega
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        let date = new Date(year, month - 1, day); // month - 1 because JS months 0-indexed
+        if (date.getDay() === 5) { // 5 means Friday
+          fridayCount++;
+        }
+      }
+
+      //  Result show karna
+      alert(`Total Fridays in ${month}/${year}: ${fridayCount}`);
+
+//       Birthday Reminder
+// Task: Ek fixed birthday date lo aur check karo ke wo is saal aaya ya aane wala hai. Aur agar aane wala hai to kitne din baqi hain?
+
+      // 🎂 Fixed birthday: 15 August
+      let birthdayMonth = 8; // August (1 = Jan, 12 = Dec)
+      let birthdayDay = 15;
+
+      // 📅 Aaj ki date
+      let today = new Date();
+      let currentYear = today.getFullYear();
+
+      // 🎯 Iss saal ka birthday banana
+      let birthdayThisYear = new Date(currentYear, birthdayMonth - 1, birthdayDay);
+
+      // 🔁 Agar birthday guzr gaya hai to aglay saal ka birthday check karo
+      if (today > birthdayThisYear) {
+        alert("Birthday has already passed this year.");
+      } else {
+        // 🔢 Din ka farq nikalna
+        let diff = birthdayThisYear - today; // milliseconds
+        let daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24)); // ms → days
+        alert(`Birthday is coming in ${daysLeft} day(s)!`);
+      }
+    </script>
+</body>
+</html>

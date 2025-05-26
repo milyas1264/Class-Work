@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+       background-color: lightblue;
+       text-align: center;
+     }
+     hr{border: 5px solid brown;}
+    </style>
+</head>
+<body>
+        <h1>Passed days</h1>
+    <a href="../index.html"><button>Back to home</button></a>
+    <hr>
+    <script>
+        // Passed Days Calculation
+        // Task: Kisi specific date se aaj tak kitne din guzar gaye wo calculate karo.
+        // Output example: 100 days have passed since January 1, 2020.
+
+        let targetDate = new Date("January 1, 2020");
+        let today = new Date();
+
+        // Difference in milliseconds
+        let diff = today - targetDate;
+
+        // Convert milliseconds to days
+        let daysPassed = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        document.write(`${daysPassed} days have passed since ${targetDate.toDateString()}.`);
+
+//         Weekend Checker
+// Task: User se koi date lo aur check karo kya wo weekend (Saturday ya Sunday) hai?
+
+
+         //  User se date input lena (format: YYYY-MM-DD)
+      let userInput = prompt("Enter a date (YYYY-MM-DD):");
+
+      //  Us input ko Date object mein convert karna
+      let date = new Date(userInput);
+
+      //  Day number nikalna (0 = Sunday, 6 = Saturday)
+      let day = date.getDay();
+
+      //  Weekend check karna
+      if (day === 0 || day === 6) {
+        alert("It's weekend!");
+      } else {
+        alert("It's a weekday.");
+      }
+    </script>
+</body>
+</html>
